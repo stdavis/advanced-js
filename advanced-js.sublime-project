@@ -1,0 +1,18 @@
+{
+    "folders": [{
+        "folder_exclude_patterns": [
+            // "dist/",
+            // "src/esri",
+            // "src/dojo",
+            // "src/dijit",
+            // "src/dojox",
+            // "src/util",
+            // "node_modules",
+            // ".grunt"
+        ],
+        "file_exclude_patterns": [
+            "*.sublime-workspace"
+        ],
+        "path": "/"
+    }]
+}
