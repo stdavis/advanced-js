@@ -1,1 +1,6 @@
 *.sublime-workspace
+src/bootstrap
+src/dijit
+src/dojo
+src/dojox
+src/jquery
