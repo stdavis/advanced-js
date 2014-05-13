@@ -175,13 +175,11 @@ define([
                     query.where = "PARCELID = '" + parcelid + "'";
                     var deferred = parcels.selectFeatures(query, FeatureLayer.SELECTION_NEW, function(selection) {
                         var center = graphicsUtils.graphicsExtent(selection).getCenter();
-                        var extHandler = map.on("extent-change", function() {
-                            extHandler.remove();
+                        map.centerAt(center).then(function() {
                             //zoom to the center then display the popup 
                             map.infoWindow.setFeatures(selection);
                             map.infoWindow.show(center);
                         });
-                        map.centerAt(center);
                     });
                 }
             }
