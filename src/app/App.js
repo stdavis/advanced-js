@@ -103,6 +103,7 @@ define([
             parcels.setSelectionSymbol(sfs);
 
             //when users click on the map select the parcel using the map point and update the url parameter
+            var that = this;
             map.on("click", function(e) {
                 var query = new Query();
                 query.geometry = e.mapPoint;
@@ -115,6 +116,9 @@ define([
                             window.history.pushState(null, null, "?parcelid=" + selection[0].attributes.PARCELID);
                         }
                     }
+                });
+                deferred.then(function (selection) {
+                    that.txtBox.value = selection[0].attributes.USEDSCRP;
                 });
                 map.infoWindow.setFeatures([deferred]);
                 map.infoWindow.show(e.mapPoint);
